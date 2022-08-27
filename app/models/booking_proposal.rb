@@ -1,7 +1,7 @@
 class BookingProposal < TempJob
   default_scope { where(proposal: true) }
 
-  has_many :proposals, foreign_key: "temp_job_id"
+  has_many :proposals, autosave: true, foreign_key: "temp_job_id"
 
   before_validation :set_type
 

@@ -5,6 +5,7 @@ class ProposalsController < ApplicationController
   end
 
   private
+
   def proposal_params
     params.require(:proposal).permit(:professional_id, :temp_job_id)
   end

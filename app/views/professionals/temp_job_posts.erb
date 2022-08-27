@@ -1,0 +1,12 @@
+<% @temp_job_posts.each do |temp_job_post| %>
+  <hr>
+  <h3> <%=temp_job_post.office.name %> </h3>
+  <h3> <%=temp_job_post.notes %> </h3>
+  <h3> <%=temp_job_post.when %> </h3>
+  <%= form_for temp_job_post.applications.new do |f| %>
+    <%= f.hidden_field :professional_id, value: @professional.id %>
+    <%= f.hidden_field :temp_job_id, value: temp_job_post.id %>
+    <%= f.submit 'Apply' %>
+  <% end %>
+  <hr>
+<% end %>

@@ -4,9 +4,21 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "offices#index"
   resources :offices do
-    member do 
+    member do
       get :temp_jobs
+      get :booking_requests
+      get :booking_proposals
+      post :post_temp_job
     end
   end
-  resources :professionals, :proposals, :invites, :applications, :booking_requests, :temp_job_posts
+  resources :professionals do
+    member do
+      get :applications
+      get :temp_job_posts
+      get :invites
+      get :proposals
+      post :apply
+    end
+  end
+  resources :proposals, :invites, :applications, :booking_requests, :temp_job_posts, :booking_proposals, :temp_jobs
 end

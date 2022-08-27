@@ -1,0 +1,8 @@
+<h3>Proposals</h3>
+<% @professional.proposals.each do |proposal| %>
+  <hr>
+  <h3> <%=proposal.temp_job.office.name%> </h3>
+  <h3> <%=proposal.temp_job.notes%> </h3>
+  <h3> <%=proposal.temp_job.when%> </h3>
+  <hr>
+<% end %>

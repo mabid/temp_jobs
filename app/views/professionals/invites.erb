@@ -1,0 +1,8 @@
+<h3>Invites</h3>
+<% @professional.invites.each do |invite| %>
+  <hr>
+  <h3> <%=invite.temp_job.office.name%> </h3>
+  <h3> <%=invite.temp_job.notes%> </h3>
+  <h3> <%=invite.temp_job.when%> </h3>
+  <hr>
+<% end %>

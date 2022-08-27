@@ -1,0 +1,8 @@
+<h3>Applications</h3>
+<% @professional.applications.each do |application| %>
+  <hr>
+  <h3> <%=application.temp_job.office.name%> </h3>
+  <h3> <%=application.temp_job.notes%> </h3>
+  <h3> <%=application.temp_job.when%> </h3>
+  <hr>
+<% end %>

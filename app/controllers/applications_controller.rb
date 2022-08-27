@@ -5,6 +5,7 @@ class ApplicationsController < ApplicationController
   end
 
   private
+
   def application_params
     params.require(:application).permit(:professional_id, :temp_job_id)
   end

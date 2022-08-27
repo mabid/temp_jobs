@@ -1,1 +1,24 @@
 <h1> <%= @professional.name %> </h1>
+<%= link_to "Applications", applications_professional_path(@professional) %>
+|
+<%= link_to "Search Temp Jobs", temp_job_posts_professional_path(@professional) %>
+|
+<%= link_to "Booking Invites", invites_professional_path(@professional) %>
+|
+<%= link_to "Booking Proposals", proposals_professional_path(@professional) %>
+
+<h2> Create new Proposal </h2>
+<%= form_for BookingProposal.new do |f| %>
+  <%= f.fields_for @professional.proposals.new do |form| %>
+    <%= form.hidden_field :professional_id, value: @professional.id %>
+  <% end %>
+  <%= f.label :office%>
+  <%= f.collection_select :office_id, Office.all, :id, :name %>
+  <br />
+  <%= f.label :notes %>
+  <%= f.text_field :notes %>
+  <br/>
+  <%= f.label :when %>
+  <%= f.date_field :when %>
+  <%= f.submit "Create" %>
+<% end %>

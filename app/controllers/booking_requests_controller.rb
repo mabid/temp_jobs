@@ -5,6 +5,7 @@ class BookingRequestsController < ApplicationController
   end
 
   private
+
   def booking_request_params
     params.require(:booking_request).permit(:office_id, :when, :notes)
   end
