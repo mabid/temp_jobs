@@ -6,6 +6,7 @@ class BookingProposal < TempJob
   before_validation :set_type
 
   private
+
   def set_type
     self.proposal  = true
   end
